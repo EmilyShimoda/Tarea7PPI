@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Login from '@/views/Login.vue'
 import SignUp from '@/views/SignUp.vue'
+import Binary from '@/views/Binary.vue'
+import ChatBot from '@/components/ChatBot.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +35,22 @@ const router = createRouter({
       path: '/signup',
       name: 'Signup',
       component: SignUp,
+    },
+    {
+      path: '/binary',
+      name: 'Binary',
+      component: Binary,
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
+      path: '/chatbot',
+      name: 'ChatBot',
+      component: ChatBot,
+      meta: {
+        authRequired: true,
+      },
     },
   ],
 })
