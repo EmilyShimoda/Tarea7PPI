@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
     "axios": "^1.8.3",
+    "dotenv": "^16.4.7",
     "firebase": "^11.3.1",
     "openai": "^4.87.4",
     "serve": "^14.2.4",

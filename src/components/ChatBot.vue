@@ -21,6 +21,7 @@ import NavBar from '@/components/NavBar.vue';
   
   <script>
   import axios from 'axios';
+//   require('dotenv').config();
   
   export default {
     data() {
@@ -44,6 +45,7 @@ import NavBar from '@/components/NavBar.vue';
   
         // Clear input field
         this.userInput = '';
+        console.log("API Key:", process.env.VUE_APP_API_KEY);
       },
       async getAIResponse(input) {
         try {
@@ -58,7 +60,7 @@ import NavBar from '@/components/NavBar.vue';
             },
             {
                 headers: {
-                'Authorization': `Bearer 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`,
+                'Authorization': `Bearer ${process.env.VUE_APP_API_KEY}`,
                 'Content-Type': 'application/json'
                 }
             }

@@ -4,6 +4,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { initializeApp } from "firebase/app";
+// import dotenv from 'dotenv'
+
+// dotenv.config()
 // import firebase from "firebase";
 
 const firebaseConfig = {
@@ -16,6 +19,7 @@ const firebaseConfig = {
 };
 // firebase.initializeApp(firebaseConfig);
 const appAuth = initializeApp(firebaseConfig);
+// require('dotenv').config();
 
 const app = createApp(App)
 
