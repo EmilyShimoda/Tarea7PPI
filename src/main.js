@@ -5,6 +5,13 @@ import App from './App.vue'
 import router from './router'
 import { initializeApp } from "firebase/app";
 // import dotenv from 'dotenv'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+// Vue.use(VueAxios, axios)
+
+// Agregamos la URL base de nuestra API
+axios.defaults.baseURL = 'http://localhost:3000/api/';
 
 // dotenv.config()
 // import firebase from "firebase";

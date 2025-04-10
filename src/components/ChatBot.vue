@@ -50,31 +50,20 @@ import NavBar from '@/components/NavBar.vue';
       },
       async getAIResponse(input) {
         try {
-            const response = await axios.post(
-            'https://api.openai.com/v1/chat/completions',
-            {
-                model: 'gpt-3.5-turbo',
-                messages: [
-                { role: 'system', content: 'You are a helpful assistant.' },
-                { role: 'user', content: input }
-                ]
-            },
-            {
-                headers: {
-                'Authorization': `Bearer ` + import.meta.env.VITE_API_KEY,
-                'Content-Type': 'application/json'
-                }
-            }
-        );
-
-        // Log the API response for debugging
-        console.log('API Response:', response.data);
-
-        // Return the AI response
-        return response.data.choices[0].message.content;
+          const response = await axios.post('/ai', {input: input})
+          .then((response) => {
+              console.log("ai");
+              // console.log(response);
+              return response.data;
+          })
+          .catch(e => {
+            console.log(e);
+          });
+          return response;
         } catch (error) {
-            console.error('Error with AI response:', error.response ? error.response.data : error.message);
-            return 'Sorry, I couldn’t understand that. Please try again.';
+          console.log(error);
+              // console.error('Error with AI response:', error.response ? error.response.data : error.message);
+              return 'Sorry, I couldn’t understand that. Please try again.';
         }
     }
 
