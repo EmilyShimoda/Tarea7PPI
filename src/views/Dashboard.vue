@@ -3,6 +3,8 @@ import NavBar from '@/components/NavBar.vue';
 import router from '@/router';
 import { getAuth, signOut } from "firebase/auth";
 import favCard from '@/components/favCard.vue';
+import { onMounted } from 'vue';
+import axios from 'axios'
 
 const auth = getAuth();
 const user = auth.currentUser;
@@ -22,6 +24,51 @@ function learn(){
     router.push('/temas');
 }
 
+const ruta = router.currentRoute.value.name;
+
+onMounted(() => {
+    console.log("tema 0");    
+    console.log(ruta);
+    axios.get(`fav/${user.uid}/0`)
+    .then(res => {
+        if(res.data == null){
+            console.log("color");
+            document.getElementById("tema0").style.display = "none";
+        }
+    })
+    .catch(e => {
+        console.log(e.response);
+    })
+
+
+    console.log("tema 1");    
+    console.log(ruta);
+    axios.get(`fav/${user.uid}/1`)
+    .then(res => {
+        if(res.data == null){
+            console.log("color");
+            document.getElementById("tema1").style.display = "none";
+        }
+    })
+    .catch(e => {
+        console.log(e.response);
+    })
+
+
+    console.log("tema 2");    
+    console.log(ruta);
+    axios.get(`fav/${user.uid}/2`)
+    .then(res => {
+        if(res.data == null){
+            console.log("color");
+            document.getElementById("tema2").style.display = "none";
+        }
+    })
+    .catch(e => {
+        console.log(e.response);
+    })
+});
+
 </script>
 
 <template>
@@ -38,9 +85,9 @@ function learn(){
         <div class="p-10 bg-purple-100 rounded-xl shadow-md w-lg">
             <h2 class="parisienne text-5xl font-bold text-center text-[#66469a] mb-4">Favoritos</h2>
             <div class="flex items-stretch justify-center flex-col gap-3">
-                <favCard title="Binary search" link="binary"/>
-                <favCard title="Two Pointers" link="two-pointers"/>
-                <favCard title="Prefix Sum" link="prefix"/>
+                <favCard id="tema0" title="Binary search" link="binary"/>
+                <favCard id="tema1" title="Two Pointers" link="two-pointers"/>
+                <favCard id="tema2" title="Prefix Sum" link="prefix"/>
             </div>
         </div>
     </div>

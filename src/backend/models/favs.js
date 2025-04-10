@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const favSchema = new Schema({
-    favId: Number,
-    userId: Number,
+    userId: String,
     temId: Number,
 });
 

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.8",
-    "axios": "^1.8.3",
+    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "connect-history-api-fallback": "^2.0.0",
     "cors": "^2.8.5",
@@ -21,6 +21,7 @@
     "openai": "^4.87.4",
     "serve": "^14.2.4",
     "vue": "^3.5.13",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
