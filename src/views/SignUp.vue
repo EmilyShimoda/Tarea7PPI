@@ -94,6 +94,7 @@ export default {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
+            alert(error);
             // ..
         });
     },
