@@ -16,19 +16,19 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
                     type="email"
                     v-model="email"
                     class="mt-2 p-2 w-full border border-gray-300 rounded-md text-gray-700"
-                    placeholder="Enter your email"
+                    placeholder="Ingrese su correo"
                     required
                     />
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-gray-800">Password</label>
+                    <label for="password" class="block text-sm font-medium text-gray-800">Contraseña</label>
                     <input
                     id="password"
                     type="password"
                     v-model="password"
                     class="mt-2 p-2 w-full border border-gray-300 rounded-md text-gray-700"
-                    placeholder="Enter your password"
+                    placeholder="Ingrese su contraseña"
                     required
                     minlength="6"
                     />

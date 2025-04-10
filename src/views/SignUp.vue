@@ -7,16 +7,16 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
     <NavBar/> 
     <div class="flex items-center justify-center h-[88vh] bg-[url('../components/imgs/abstractbackground.jpg')] bg-center bg-cover">
         <div class="p-10 bg-white rounded-xl shadow-md w-lg">
-            <h2 class="parisienne text-5xl font-bold text-center text-[#66469a] mb-4">Create account</h2>
+            <h2 class="parisienne text-5xl font-bold text-center text-[#66469a] mb-4">Crear cuenta</h2>
             <form @submit.prevent="register" class="flex flex-col">
                 <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-800">Name</label>
+                    <label for="email" class="block text-sm font-medium text-gray-800">Nombre</label>
                     <input
                     id="name"
                     type="text"
                     v-model="name"
                     class="mt-2 p-2 w-full border border-gray-300 rounded-md text-gray-700"
-                    placeholder="Enter your name"
+                    placeholder="Ingrese su nombre"
                     required
                     />
                 </div>
@@ -28,19 +28,19 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
                     type="email"
                     v-model="email"
                     class="mt-2 p-2 w-full border border-gray-300 rounded-md text-gray-700"
-                    placeholder="Enter your email"
+                    placeholder="Ingrese su correo"
                     required
                     />
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-gray-800">Password</label>
+                    <label for="password" class="block text-sm font-medium text-gray-800">Contraseña</label>
                     <input
                     id="password"
                     type="password"
                     v-model="password"
                     class="mt-2 p-2 w-full border border-gray-300 rounded-md text-gray-700"
-                    placeholder="Enter your password"
+                    placeholder="Ingrese su contraseña"
                     required
                     />
                 </div>

@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue';
+
 </script>
 
 <template>
@@ -32,6 +33,7 @@ import NavBar from '@/components/NavBar.vue';
     },
     methods: {
       async sendMessage() {
+        console.log("API Key:", import.meta.env.VITE_API_KEY);
         if (!this.userInput.trim()) return;
   
         // Add user message to the chat
@@ -45,7 +47,6 @@ import NavBar from '@/components/NavBar.vue';
   
         // Clear input field
         this.userInput = '';
-        console.log("API Key:", process.env.VUE_APP_API_KEY);
       },
       async getAIResponse(input) {
         try {
@@ -60,7 +61,7 @@ import NavBar from '@/components/NavBar.vue';
             },
             {
                 headers: {
-                'Authorization': `Bearer ${process.env.VUE_APP_API_KEY}`,
+                'Authorization': `Bearer ` + import.meta.env.VITE_API_KEY,
                 'Content-Type': 'application/json'
                 }
             }
@@ -82,19 +83,6 @@ import NavBar from '@/components/NavBar.vue';
   </script>
   
   <style scoped>
-  /* .chatbot {
-    width: 400px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .chat-window {
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-  } */
   
   .message {
     margin-bottom: 10px;
@@ -115,20 +103,5 @@ import NavBar from '@/components/NavBar.vue';
     justify-content: space-between;
   }
   
-  /* input {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    width: 15%;
-    padding: 8px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 4px;
-  } */
   </style>
   

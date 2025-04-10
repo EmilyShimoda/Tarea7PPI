@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue';
+import addFav from '@/components/addFav.vue';
 </script>
 
 <template>
@@ -7,8 +8,13 @@ import NavBar from '@/components/NavBar.vue';
     <div class="px-10 py-10 items-center bg-[url('../components/imgs/7087596.jpg')] bg-center bg-cover">
         <div class="bg-white rounded-4xl w-[90vw] text-zinc-700">
             <div class="">
-                <h1 className="text-violet-950 text-7xl pt-20 px-10 sm:px-20 md:px-30 sour-gummy">Búsqueda Binaria</h1>
-                <p className="px-13 sm:px-23 md:px-33  text-2xl text-zinc-500 pb-10 quicksand">01/03/2025</p>
+                <div class="pt-10 px-10 text-xl sm:px-20 lg:px-30 flex flex-row justify-between items-baseline">
+                    <h1 className="text-violet-950 text-7xl pt-20 sour-gummy">Búsqueda Binaria</h1>
+                    <div class="text-right" >
+                        <addFav/>
+                    </div>
+                </div>
+                <p className="px-13 sm:px-23 md:px-33 text-2xl text-zinc-500 pb-10 quicksand">01/03/2025</p>
 
                 <img src="../components/imgs/digitization-5194814_1920.jpg" alt="binary img" class="px-5 sm:px-15 md:px-25">
             

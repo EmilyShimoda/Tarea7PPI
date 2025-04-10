@@ -5,7 +5,11 @@ import Dashboard from '@/views/Dashboard.vue'
 import Login from '@/views/Login.vue'
 import SignUp from '@/views/SignUp.vue'
 import Binary from '@/views/Binary.vue'
+import TwoPointers from '@/views/Two pointers.vue';
+import Lista from '@/views/Lista.vue';
+import PrefixSum from '@/views/Prefix sum.vue';
 import ChatBot from '@/components/ChatBot.vue';
+import { list } from 'postcss';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +44,30 @@ const router = createRouter({
       path: '/binary',
       name: 'Binary',
       component: Binary,
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
+      path: '/two-pointers',
+      name: 'Two Pointers',
+      component: TwoPointers,
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
+      path: '/prefix',
+      name: 'Prefix Sum',
+      component: PrefixSum,
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
+      path: '/temas',
+      name: 'Temas',
+      component: Lista,
       meta: {
         authRequired: true,
       },

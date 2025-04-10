@@ -39,10 +39,10 @@ function logOut() {
         <div class="text-[#66469a] text-3xl font-bold sour-gummy">My App</div>
         <div class="flex gap-8">
 
-          <router-link to="/" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Home</router-link>
+          <router-link to="/" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Inicio</router-link>
           <router-link v-if="!isLoggedIn" to="/login" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Log In</router-link>
-          <router-link v-if="!isLoggedIn" to="/signup" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Create Account</router-link>
-          <router-link v-if="isLoggedIn" to="/dashboard" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Dashboard</router-link>
+          <router-link v-if="!isLoggedIn" to="/signup" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Crear cuenta</router-link>
+          <router-link v-if="isLoggedIn" to="/dashboard" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Perfil</router-link>
           <router-link v-if="isLoggedIn" to="/chatbot" class="quicksand text-lg text-[#66469a] hover:text-violet-950">ChatBot</router-link>
           <button v-if="isLoggedIn" @click="logOut" class="quicksand text-lg text-[#66469a] hover:text-violet-950">Log Out</button>
         </div>
