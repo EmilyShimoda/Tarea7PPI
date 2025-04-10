@@ -11,7 +11,7 @@ import VueAxios from 'vue-axios'
 // Vue.use(VueAxios, axios)
 
 // Agregamos la URL base de nuestra API
-axios.defaults.baseURL = '/api/';
+axios.defaults.baseURL = 'https://tarea7ppi-production.up.railway.app/api/';
 
 // dotenv.config()
 // import firebase from "firebase";
