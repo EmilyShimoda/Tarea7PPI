@@ -7,9 +7,9 @@ import NavBar from '@/components/NavBar.vue';
     <NavBar/>
     <div class="px-10 py-10 h-[90vh] bg-[url('../components/imgs/7087596.jpg')] bg-center bg-cover flex justify-center items-center">
         <div class="bg-white w-[80vw] rounded-4xl p-10">
-            <div class="h-[60vh] border-zinc-700 text-zinc-500">
+            <div class="h-[60vh] overflow-y-auto border-zinc-700 text-zinc-500 text-xl">
                 <div v-for="(message, index) in messages" :key="index" class="message">
-                <p :class="message.sender">{{ message.text }}</p>
+                <textarea :class="message.sender" class="message">{{ message.text }}</textarea>
                 </div>
             </div>
             <div class=" flex flex-row items-center justify-center">
@@ -37,13 +37,13 @@ import NavBar from '@/components/NavBar.vue';
         if (!this.userInput.trim()) return;
   
         // Add user message to the chat
-        this.messages.push({ text: this.userInput, sender: 'user' });
+        this.messages.push({ text: this.userInput, sender: 'User' });
   
         // Call the AI API
         const response = await this.getAIResponse(this.userInput);
   
         // Add AI response to the chat
-        this.messages.push({ text: response, sender: 'ai' });
+        this.messages.push({ text: response, sender: 'AI' });
   
         // Clear input field
         this.userInput = '';
@@ -77,14 +77,14 @@ import NavBar from '@/components/NavBar.vue';
     margin-bottom: 10px;
   }
   
-  .message.user {
+  .User {
     text-align: right;
-    color: blue;
+    color: #66469a;
   }
   
-  .message.ai {
+  .AI {
     text-align: left;
-    color: green;
+    color: black;
   }
   
   .input-section {
